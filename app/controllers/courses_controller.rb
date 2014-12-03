@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def create
     respond_to do |format|
       if @course.update_attributes(course_params)
-        format.html { redirect_to course_path(@course) }
+        format.html { redirect_to course_classroom_path(@course) }
       else
         format.html { render action: :new }
       end
@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update_attributes(course_params)
-        format.html { redirect_to course_path(@course) }
+        format.html { redirect_to course_classroom_path(@course) }
       else
         format.html { render action: :edit }
       end

@@ -1,15 +1,27 @@
 %h3= "Estudante #{@student.id}"
 
-= label_tag :name
+%strong Nome
 = @student.name
 
 %br/
-= label_tag :register_number
+%strong Número de Registro
 = @student.register_number
 
 %br/
-= label_tag :status
-= @student.status
+%strong Situação
+= status @student.status
+
+- if @student.courses.present?
+  %br/
+  %br/
+  %strong Cursos
+  %br/
+  - @student.courses.each do |course|
+    = course.name
+    %strong= "Vinculado em #{course.linked_at(@student)}"
+    %br/
 
 %br/
 = link_to "Voltar", root_path
+= link_to "Editar", edit_student_path(@student)
+= link_to "Vincular cursos", student_classroom_path(@student)

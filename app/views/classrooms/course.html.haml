@@ -1,0 +1,7 @@
+= simple_form_for @course, url: fetch_courses_classroom_path(@course), method: :post do |f|
+  %h3= "Selecione os estudantes que serão vinculados ao curso #{@course.name}"
+  - Student.all.each do |student|
+    = check_box_tag 'students[ids][]', student.id, @course.students.include?(student) ? true : false
+    = f.label student.name
+    %br/
+  = f.submit 'Salvar'

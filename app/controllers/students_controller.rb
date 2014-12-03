@@ -8,7 +8,11 @@ class StudentsController < ApplicationController
   def create
     respond_to do |format|
       if @student.update_attributes(student_params)
-        format.html { redirect_to student_path(@student) }
+        if Course.all.present?
+          format.html { redirect_to student_classroom_path(@student) }
+        else
+          format.html { redirect_to student_path(@student) }
+        end
       else
         format.html { render action: :new }
       end
@@ -18,7 +22,11 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update_attributes(student_params)
-        format.html { redirect_to student_path(@student) }
+        if Course.all.present?
+          format.html { redirect_to student_classroom_path(@student) }
+        else
+          format.html { redirect_to student_path(@student) }
+        end
       else
         format.html { render action: :edit }
       end
