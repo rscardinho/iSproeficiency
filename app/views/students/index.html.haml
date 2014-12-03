@@ -1,0 +1,8 @@
+- Student.all.each do |student|
+  = student.name
+  = link_to "Visualizar", student_path(student)
+  = link_to "Editar", edit_student_path(student)
+  = link_to "Remover", student_path(student), method: :delete
+
+%br/
+= link_to "Voltar", root_path

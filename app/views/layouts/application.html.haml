@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title ProficiencyTest
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = link_to 'Estudantes', students_path
+    = link_to 'Cursos', courses_path
+    %br/
+
+    = yield
+
+  %br/
+  
+  %footer
+    = link_to "Criar estudante", new_student_path
+    = link_to "Criar curso", new_course_path

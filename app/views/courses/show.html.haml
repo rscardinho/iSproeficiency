@@ -1,0 +1,15 @@
+%h3= "Curso #{@course.id}"
+
+= label_tag :name
+= @course.name
+
+%br/
+= label_tag :description
+= @course.description
+
+%br/
+= label_tag :status
+= @course.status
+
+%br/
+= link_to "Voltar", root_path
