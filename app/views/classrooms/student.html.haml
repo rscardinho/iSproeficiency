@@ -4,4 +4,5 @@
     = check_box_tag 'courses[ids][]', course.id, @student.courses.include?(course) ? true : false
     = f.label course.name
     %br/
-  = f.submit 'Salvar'
+  
+  = f.submit 'Salvar', class: 'btn btn-primary'

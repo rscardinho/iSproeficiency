@@ -1,8 +1,19 @@
-- Course.all.each do |course|
-  = course.name
-  = link_to "Visualizar", course_path(course)
-  = link_to "Editar", edit_course_path(course)
-  = link_to "Remover", course_path(course), method: :delete
+.panel.panel-default
+  .panel-heading Cursos
+  %table.table
+    %thead
+      %tr
+        %th Nome
+        %th Descrição
+        %th Ações
+    %tbody
+      - Course.all.each do |course|
+        %tr
+          %td= course.name
+          %td= course.description
+          %td.links
+            = link_to "Visualizar", course_path(course)
+            = link_to "Editar", edit_course_path(course)
+            = link_to "Remover", course_path(course), method: :delete
 
-%br/
-= link_to "Voltar", root_path
+= link_to "Voltar", root_path, class: 'button default'

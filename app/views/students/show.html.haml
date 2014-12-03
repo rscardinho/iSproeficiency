@@ -19,9 +19,11 @@
   - @student.courses.each do |course|
     = course.name
     %strong= "Vinculado em #{course.linked_at(@student)}"
-    %br/
 
 %br/
-= link_to "Voltar", root_path
-= link_to "Editar", edit_student_path(@student)
-= link_to "Vincular cursos", student_classroom_path(@student)
+%br/
+
+.button-group
+  = link_to "Voltar", root_path, class: 'button default'
+  = link_to "Editar", edit_student_path(@student), class: 'button default'
+  = link_to "Vincular cursos", student_classroom_path(@student), class: 'button default'

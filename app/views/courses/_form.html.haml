@@ -1,11 +1,11 @@
-= simple_form_for course do |f|
-  = f.input :name, required: true
+= simple_form_for course, class: 'form-horizontal' do |f|
+  .form-group
+    = f.input :name, required: true, class: 'control-label col-xs-2', input_html: {class: 'form-control'}
+  
+  .form-group
+    = f.input :description, required: true, class: 'control-label col-xs-2', input_html: {class: 'form-control'}
+  
+  .form-group.boolean_label
+    = f.input :status, as: :boolean, boolean_style: :inline
 
-  = f.input :description, required: true
-
-  = f.label :status, required: true
-  = f.check_box :status
-
-  %br/
-
-  = f.submit 'Salvar'
+  = f.submit 'Salvar', class: 'btn btn-primary'

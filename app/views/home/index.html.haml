@@ -1,17 +1,35 @@
-%h4 Estudantes
-- Student.all.each do |student|
-  = student.name
+.panel.panel-default
+  .panel-heading Estudantes
+  %table.table
+    %thead
+      %tr
+        %th Nome
+        %th Número de Registro
+        %th Ações
+    %tbody
+      - Student.all.each do |student|
+        %tr
+          %td= student.name
+          %td= student.register_number
+          %td.links
+            = link_to "Visualizar", student_path(student)
+            = link_to "Editar", edit_student_path(student)
+            = link_to "Remover", student_path(student), method: :delete
 
-  = link_to "Visualizar", student_path(student)
-  = link_to "Editar", edit_student_path(student)
-  = link_to "Remover", student_path(student), method: :delete
-  %br/
-
-%h4 Cursos
-- Course.all.each do |course|
-  = course.name
-
-  = link_to "Visualizar", course_path(course)
-  = link_to "Editar", edit_course_path(course)
-  = link_to "Remover", course_path(course), method: :delete
-  %br/
+.panel.panel-default
+  .panel-heading Cursos
+  %table.table
+    %thead
+      %tr
+        %th Nome
+        %th Descrição
+        %th Ações
+    %tbody
+      - Course.all.each do |course|
+        %tr
+          %td= course.name
+          %td= course.description
+          %td.links
+            = link_to "Visualizar", course_path(course)
+            = link_to "Editar", edit_course_path(course)
+            = link_to "Remover", course_path(course), method: :delete

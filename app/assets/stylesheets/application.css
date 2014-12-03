@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+.content {
+  padding: 0 15px;
+}
+
+.button {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button.default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.button.default:hover {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+  text-decoration: none;
+}
+
+td.links a {
+  padding: 5px;
+}
+
+.boolean_label label {
+  padding: 0 5px;
+}
